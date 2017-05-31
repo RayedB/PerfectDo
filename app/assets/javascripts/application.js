@@ -11,9 +11,14 @@
 // about supported directives.
 //
 
-//= angular/angular
+//= require angular/angular
+//= require angular-rails-templates
+//= require angular-ui-router/release/angular-ui-router
+//= require angular-animate/angular-animate
+//= require angular-sanitize/angular-sanitize
 //= require AngularDevise/lib/devise
+//= require angular-resource/angular-resource
+//= require angular-input-dropdown/inputDropdown
 
-
-
+//= require ./angular/app
 //= require_tree .
