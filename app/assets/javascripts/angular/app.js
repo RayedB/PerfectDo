@@ -1,1 +1,1 @@
-var app = angular.module('EffectiveDo',['ngResource','ui.router','ngSanitize','templates','Devise']);
+var app = angular.module('EffectiveDo',['ngResource','ui.router','ngSanitize','templates','Devise','ngResource']);
