@@ -11,5 +11,9 @@
 // about supported directives.
 //
 
-//= require turbolinks
+//= angular/angular
+//= require AngularDevise/lib/devise
+
+
+
 //= require_tree .
