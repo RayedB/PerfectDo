@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'home#index'
+  get '/welcome', to: 'home#private'
   namespace :api, defaults: {format: "json"} do
     resources :organizations
     resources :todos do
