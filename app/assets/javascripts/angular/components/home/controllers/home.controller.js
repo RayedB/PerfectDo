@@ -1,7 +1,6 @@
 angular
   .module("EffectiveDo")
-  .controller('HomeCtrl', function($scope, $rootScope, Auth){
+  .controller('HomeCtrl', ['$scope','$rootScope','Auth', 'currentUser', function($scope, $rootScope, Auth, currentUser){
     var homeCtrl = this;
-    
-
-  })
+    console.log("homeCtrl");
+  }]);

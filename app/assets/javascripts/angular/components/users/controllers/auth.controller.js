@@ -1,16 +1,11 @@
 angular
   .module("EffectiveDo")
-  .controller('AuthCtrl', function($scope, $rootScope, Auth){
+  .controller('AuthCtrl', function($scope, $rootScope, $state, Auth){
     var authCtrl = this;
     var config = {headers: {'X-HTTP-Method-Override': 'POST'}}
 
-    authCtrl.register = register
-    authCtrl.signin = signIn
-
-    // authCtrl.login_credentials = {
-    //   email: "",
-    //   password: ""
-    // };
+    authCtrl.register = register;
+    authCtrl.signin = signIn;
 
     authCtrl.credentials = {
       email: "",
@@ -21,6 +16,7 @@ angular
     function signIn() {
       Auth.login(authCtrl.credentials).then(function(user) {
         console.log(user)
+        $state.go('home');
       }, function(error) {
         authCtrl.invalidSignin = true;
         console.error("Nah bruh");
@@ -28,12 +24,18 @@ angular
     }
 
     function register() {
-      Auth.register(authCtrl.credentials).then(function(registeredUser) {
-        console.log(registeredUser);
-      }, function(error) {
-        authCtrl.invalidSignin = true;
-        console.error("Nah bruh");
-      });
+      if (authCtrl.credentials.password == authCtrl.credentials.password_confirmation){
+        Auth.register(authCtrl.credentials).then(function(registeredUser) {
+          console.log(registeredUser);
+          $state.go('home');
+        }, function(error) {
+          authCtrl.invalidSignin = true;
+          console.error("Nah bruh");
+        });
+      }
+      else {
+        console.log("password_confirmation incorrect")
+      }
     }
 
 
