@@ -1,12 +1,24 @@
-app.config(['$routeProvider',
-  function($routeProvider) {
-    $routeProvider
-    .when('/infographie1', {
-        templateUrl: "templateInfographie1.html",
-        controller: 'todoCtrl',
-        controllerAs: 'authenticationCtrl',
-    })
-    .otherwise({
-      redirectTo: '/login'
-    });
-}]);
+angular
+  .module("EffectiveDo")
+  .config(function($stateProvider,$urlRouterProvider){
+    $stateProvider
+      .state("home", {
+        url: '/home',
+        templateUrl:'angular/components/home/views/home.html',
+        controller: 'HomeCtrl',
+        controllerAs: 'homeCtrl'
+      })
+      .state("login", {
+        url: '/login',
+        templateUrl:'angular/components/home/views/login.html',
+        controller: 'AuthCtrl',
+        controllerAs: 'authCtrl'
+      })
+      .state("register", {
+        url: '/register',
+        templateUrl:'angular/components/home/views/register.html',
+        controller: 'AuthCtrl',
+        controllerAs: 'authCtrl'
+      })
+    $urlRouterProvider.otherwise("/home");
+  })
