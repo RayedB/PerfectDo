@@ -10,13 +10,13 @@ angular
       })
       .state("login", {
         url: '/login',
-        templateUrl:'angular/components/home/views/login.html',
+        templateUrl:'angular/components/users/views/login.html',
         controller: 'AuthCtrl',
         controllerAs: 'authCtrl'
       })
       .state("register", {
         url: '/register',
-        templateUrl:'angular/components/home/views/register.html',
+        templateUrl:'angular/components/users/views/register.html',
         controller: 'AuthCtrl',
         controllerAs: 'authCtrl'
       })
