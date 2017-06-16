@@ -15,7 +15,6 @@ angular
 
     function signIn() {
       Auth.login(authCtrl.credentials).then(function(user) {
-        console.log(user)
         $state.go('home');
       }, function(error) {
         authCtrl.invalidSignin = true;
@@ -26,7 +25,6 @@ angular
     function register() {
       if (authCtrl.credentials.password == authCtrl.credentials.password_confirmation){
         Auth.register(authCtrl.credentials).then(function(registeredUser) {
-          console.log(registeredUser);
           $state.go('home');
         }, function(error) {
           authCtrl.invalidSignin = true;

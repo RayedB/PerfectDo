@@ -6,7 +6,22 @@ angular
         url: '/home',
         templateUrl:'angular/components/home/views/home.html',
         controller: 'HomeCtrl',
-        controllerAs: 'homeCtrl'
+        controllerAs: 'homeCtrl',
+        resolve: {
+          currentUser: ['$q', '$state', 'Auth', function($q, $state, Auth) {
+            var d = $q.defer();
+            Auth.currentUser().then(function(user) {
+              // return User.show({userid: user.id})
+              d.resolve(user);
+            })
+            .then(function(user) {
+              d.resolve(user);
+            }, function(error) {
+              $state.go('authentication.signin');
+            });
+            return d.promise;
+          }]
+        }
       })
       .state("login", {
         url: '/login',
@@ -20,5 +35,5 @@ angular
         controller: 'AuthCtrl',
         controllerAs: 'authCtrl'
       })
-    $urlRouterProvider.otherwise("/home");
+    $urlRouterProvider.otherwise("/login");
   })
