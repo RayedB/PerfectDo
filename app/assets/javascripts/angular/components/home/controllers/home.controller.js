@@ -5,8 +5,11 @@ angular
     console.log("homeCtrl");
     console.log(currentUser);
 
-    //signOut();
-
+    homeCtrl.tabs = [
+      { title:'Home', url:'home.welcome' },
+      { title:'Models', url:'home.models.all' }
+      // { title:'Products', view_url:'home.products'}
+    ];
 
     function signOut() {
       Auth.logout().then(function(user) {
