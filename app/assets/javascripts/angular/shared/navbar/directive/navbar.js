@@ -11,13 +11,12 @@ angular.module("navbar", [])
     return {
       restrict: 'EA',
       replace: true,
-      templateUrl: "../views/navbar.html",
+      templateUrl: "angular/shared/navbar/view/navbar.html",
       scope: {
         "tabs": "="
-
       },
       link: function(scope, element, attrs) {
-          
+
       }
     }
   }])

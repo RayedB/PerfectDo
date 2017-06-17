@@ -1,6 +1,6 @@
 (function(){
   angular
-    .module('EffectiveDo',['ui.router','templates','Devise']);
+    .module('EffectiveDo',['ui.router','templates','Devise','navbar']);
 
 }())
 

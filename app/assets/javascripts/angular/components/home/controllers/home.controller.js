@@ -7,7 +7,7 @@ angular
 
     homeCtrl.tabs = [
       { title:'Home', url:'home.welcome' },
-      { title:'Models', url:'home.models.all' }
+      { title:'Profile', url:'home.models.all' }
       // { title:'Products', view_url:'home.products'}
     ];
 
