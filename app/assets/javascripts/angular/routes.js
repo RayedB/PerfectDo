@@ -23,6 +23,12 @@ angular
           }]
         }
       })
+      .state("home.account", {
+        url: '/account',
+        templateUrl:'angular/components/users/views/home.profile.html',
+        controller: 'UserCtrl',
+        controllerAs: 'userCtrl'
+      })
       .state("login", {
         url: '/login',
         templateUrl:'angular/components/users/views/login.html',

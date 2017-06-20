@@ -12,7 +12,7 @@
         </div>
         <ul class="nav navbar-top-links navbar-right">
             <li>
-                <a ng-click="homeCtrl.signOut()">
+                <a ui-sref="home.account">
                     <i class="fa fa-sign-out"></i> Profile
                 </a>
             </li>
@@ -35,7 +35,7 @@
     <div id="page-wrapper" class="gray-bg {{$state.current.name}}">
 
         <!-- Main view  -->
-        <div ui-view></div>
+        <ui-view></ui-view>
 
         <!-- Footer -->
         <!-- <div ng-include="'views/common/footer.html'"></div> -->
