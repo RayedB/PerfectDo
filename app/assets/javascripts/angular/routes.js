@@ -11,13 +11,13 @@ angular
           currentUser: ['$q', '$state', 'Auth', function($q, $state, Auth) {
             var d = $q.defer();
             Auth.currentUser().then(function(user) {
-              // return User.show({userid: user.id})
+
               d.resolve(user);
             })
             .then(function(user) {
               d.resolve(user);
             }, function(error) {
-              $state.go('authentication.signin');
+              $state.go('login');
             });
             return d.promise;
           }]

@@ -16,7 +16,7 @@ angular.module("navbar", [])
         "tabs": "="
       },
       link: function(scope, element, attrs) {
-
+        
       }
     }
   }])

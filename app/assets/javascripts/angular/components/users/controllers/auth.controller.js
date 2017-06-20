@@ -10,16 +10,18 @@ angular
     authCtrl.credentials = {
       email: "",
       password: "",
-      password_confirmation: ""
-    };
+          };
 
     function signIn() {
-      Auth.login(authCtrl.credentials).then(function(user) {
+      Auth.login(authCtrl.credentials,config).then(function(user) {
+        console.log(Auth.isAuthenticated())
+        console.log(user)
         $state.go('home');
       }, function(error) {
-        authCtrl.invalidSignin = true;
+        //authCtrl.invalidSignin = true;
         console.error("Nah bruh");
       });
+
     }
 
     function register() {

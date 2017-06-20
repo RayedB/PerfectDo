@@ -1,6 +1,10 @@
 (function(){
   angular
-    .module('EffectiveDo',['ui.router','templates','Devise','navbar']);
+    .module('EffectiveDo',['ui.router','templates','Devise','navbar'])
+    .config(function(AuthInterceptProvider) {
+        // Intercept 401 Unauthorized everywhere
+        AuthInterceptProvider.interceptAuth(true);
+    })
 
 }())
 
