@@ -4,8 +4,8 @@ module Api
 
     # GET /todos
     def index
-      @lists = current_user.lists
-      json_response(@lists)
+      @lists = List.all
+      render json:@lists
     end
 
     # POST /todos

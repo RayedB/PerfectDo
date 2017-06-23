@@ -20,9 +20,9 @@ module Api
       params.permit(:name)
     end
 
-    def set_todo
-      @list = Todo.find(params[:id])
-    end
+    # def set_todo
+    #   @list = Todo.find(params[:id])
+    # end
 
   end
 end
